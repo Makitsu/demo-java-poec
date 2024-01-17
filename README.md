@@ -1,5 +1,5 @@
 # demo-java-poec
-Regroupe les différents projets de la POEC Java - Angular 
+Regroupe les différents ateliers de la POEC Java - Angular 
 
 ## demo-data-jpa
 Projet sur spring data jpa - Maven avec intégration spring rest, spring profile
