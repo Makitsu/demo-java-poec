@@ -1,0 +1,16 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.demo.poo</groupId>
+  <artifactId>demopoo</artifactId>
+  <version>1</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>2.12.5</version>
+    </dependency>
+  </dependencies>
+
+</project>
