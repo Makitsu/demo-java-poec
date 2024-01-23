@@ -1,6 +1,7 @@
 package com.jmd.poec.java.demojpa2.controller;
 
 import com.jmd.poec.java.demojpa2.domain.dto.ErrorDTO;
+import com.jmd.poec.java.demojpa2.domain.exception.UserException;
 import com.jmd.poec.java.demojpa2.domain.exception.WilderException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,14 @@ public class WilderControllerAdvice {
     @ResponseBody
     public ResponseEntity<ErrorDTO> handleWilderException(WilderException exception){
         LOGGER.error("Exception => WilderException : "+exception.getMessage(),exception);
+        ErrorDTO errorDTO = new ErrorDTO(exception.getStatusCode(),exception.getMessage(),exception.getMessage());
+        return ResponseEntity.status(exception.getStatusCode()).body(errorDTO);
+    }
+
+    @ExceptionHandler(UserException.class)
+    @ResponseBody
+    public ResponseEntity<ErrorDTO> handleWilderException(UserException exception){
+        LOGGER.error("Exception => UserException : "+exception.getMessage(),exception);
         ErrorDTO errorDTO = new ErrorDTO(exception.getStatusCode(),exception.getMessage(),exception.getMessage());
         return ResponseEntity.status(exception.getStatusCode()).body(errorDTO);
     }
