@@ -6,6 +6,8 @@ import com.jmd.poec.java.demojpa2.service.WilderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -80,7 +82,7 @@ public class WilderController {
     @PostMapping("")
     public ResponseEntity<WilderFullDTO> post(@RequestBody WilderFullDTO wilder){
         LOGGER.info("CREATE wilder : {}",wilder);
-        return ResponseEntity.ok(wilderService.create(wilder));
+        return ResponseEntity.status(HttpStatus.CREATED).body(wilderService.create(wilder));
     }
 
     /*

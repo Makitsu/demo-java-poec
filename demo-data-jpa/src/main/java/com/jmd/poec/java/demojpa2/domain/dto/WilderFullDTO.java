@@ -53,4 +53,14 @@ public class WilderFullDTO {
     public void setInformationContent(List<WilderInformationDTO> informationContent) {
         this.informationContent = informationContent;
     }
+
+    public WilderFullDTO(Long id, String name, String email, String category) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.category = category;
+    }
+
+    public WilderFullDTO() {
+    }
 }

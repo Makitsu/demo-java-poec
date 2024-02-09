@@ -44,7 +44,7 @@ public class WilderService {
             throw new WilderException(HttpStatus.NOT_FOUND,"Wilder "+id+" is not found !");
         }
 
-        return optionalWilder.map(wilder -> modelMapper.map(wilderMapper, WilderFullDTO.class)).orElse(null);
+        return optionalWilder.map(wilder -> modelMapper.map(wilder, WilderFullDTO.class)).orElse(null);
     }
 
     public WilderFullDTO update(Long id, WilderDTO wilder) {
