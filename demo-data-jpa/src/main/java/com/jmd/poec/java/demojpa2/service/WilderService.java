@@ -9,6 +9,7 @@ import com.jmd.poec.java.demojpa2.service.mapper.WilderCustomMapper;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Service
+@Transactional
 public class WilderService {
 
     private final WilderRepository wilderRepository;
@@ -67,7 +69,8 @@ public class WilderService {
         wilderRepository.deleteById(id);
     }
 
+
     public List<WilderFullDTO> customFind(String category) {
-        return new ArrayList<>();
+        throw new RuntimeException("Erreur provoquant un rollback");
     }
 }

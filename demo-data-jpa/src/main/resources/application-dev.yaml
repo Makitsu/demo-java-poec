@@ -7,8 +7,13 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+    database: mysql
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
   show-sql: true
 
 logging:
   level:
-    root: debug
+    root: info
